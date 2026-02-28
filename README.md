@@ -23,7 +23,8 @@ ATRIBUTOS </br></br>
 `autor` - String </br>
 `disponivel` - Booleano </br>
 `data_emprestimo` - Datatime </br>
-`data_devolucao` - Datatime </br>
+`data_devolucao` - Datatime </br></br>
+
 MÉTODOS </br></br>
 `emprestar_para(self,name)` -- confirmação do empréstimo e mudando o estado de disponibilidade do livro </br>
 `devolver(self)` -- ao acionar este método, o livro volta a ter uma unidade disponível 
