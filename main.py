@@ -2,8 +2,8 @@ import models
 
 ## 1. Crie 2 livros
 
-LivroA = models.Livros("A revolução dos Bichos","George O.")
-LivroB = models.Livros("O pequeno Principe","Autor")
+LivroA = models.Livro("A revolução dos Bichos","George O.")
+LivroB = models.Livro("O pequeno Principe","Autor")
 
 ## 2. Crie 1 Usuário
 
