@@ -1,39 +1,43 @@
 from datetime import datetime 
 
-## Classe Livros:
+# classe para cadastro de livro e gerenciamento de empréstimos
 
 class Livro:
 
-    def __init__(self,titulo,autor,disponivel = True, data_emprestimo = None, data_devolucao = None):
+    def __init__(self,titulo,autor,quantidade,disponivel = True, data_emprestimo = None, data_devolucao = None):
 
         self.titulo = titulo 
         self.autor = autor
+        self.quantidade = quantidade
+        self.estoque = quantidade
         self.disponivel = disponivel
         self.data_emprestimo = data_emprestimo
         self.data_devolucao = data_devolucao
 
     def emprestar_para(self,name):
 
-        if self.disponivel:
+        if self.quantidade > 0:
+                
+                self.quantidade -= 1
+                self.data_emprestimo = datetime.now(); ## altera para a data que foi emprestado o livro
+                print(f"Empréstimo confirmado para {name}")
 
-            self.data_emprestimo = datetime.now(); ## altera para a data que foi emprestado o livro
-            self.disponivel = False;
-            print(f"Empréstimo confirmado para {name}")
-
-        
         else:
-            print("Este Livro já foi emprestado, por favor tente outro livro")
+            print("todos os Livros já foi emprestado, por favor tente outro livro")
 
         return 0
     
     def devolver(self):
 
-        if self.disponivel == False:
 
-            self.disponivel = True
-            self.data_devolucao = datetime.now()
+        self.data_devolucao = datetime.now()
+        self.quantidade += 1
+
+        if self.quantidade > self.estoque:
+            
+            print(f"todos os livros do estoques foram devolvidos, total de: {self.estoque}")
         
-        else:
+        if self.quantidade == self.estoque:
 
             print("este livro não recebeu emprestimos ativo no momento")
         
@@ -44,6 +48,9 @@ class Livro:
     def __str__(self):
 
         return f"o livro '{self.titulo}' do autor {self.autor} está disponivel ({self.disponivel}) , \nhouve empréstimo de {self.data_emprestimo} até {self.data_devolucao}"    
+
+## classes da ordem 'usuario':
+
 class Usuario:
 
     def __init__(self,nome,livros_emprestados = None):
@@ -68,8 +75,12 @@ class Usuario:
             print("o livro a ser removido não existe, tente novamente com base nos emprestimos feitos")
             print(self.livros_emprestados)
             print("tente novamente")
+    
+    def livros_usuario(self):
+
+        return self.livros_emprestados
 
     def __str__(self):
 
         return f"o usuario {self.nome} tem a seguinte lista de livros pego como emprestimo {self.livros_emprestados}"
-    
+
