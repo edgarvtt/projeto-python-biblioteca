@@ -2,7 +2,7 @@
 
 Olá, este projeto decidi fazer para fortalecer meu desenvolvimento em aplicações com Python , Este projeto esta baseado nos requesitos para o Exam PCAP-31-0x do Python Institute, o que incluí basicamente: </br>
 
-* Gerenciar Módulos , PIP & UV , Lambda , List Comprehension , Programação Orientada a Objetos (POO) , Interadores , Geradores , entre outros tópicos cátalogados com 'Intermédiario'
+* Gerenciar Módulos , PIP & UV , Lambda , List Comprehension , Programação Orientada a Objetos (POO) , Interadores , Geradores , entre outros tópicos catalogados com 'Intermédiario'
 </br></br> está é a base para esse projeto, ao longo desse README.md colocarei mais sobre como o sistema funciona com base no aprendizado, já que não é um projeto além de didático
 
 ## Sumário: 
